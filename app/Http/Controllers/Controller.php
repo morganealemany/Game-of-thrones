@@ -68,8 +68,9 @@ class Controller extends BaseController
         // Retrieve the given house
         $house = House::find($id);
 
-        return view('house', [
-            'house' => $house,
-        ]);
+        // And all the characters linked to the given house
+        $characters = $house->characters;
+
+        return view('house', compact('house', 'characters'));
     }
 }

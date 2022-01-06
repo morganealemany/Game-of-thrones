@@ -22,7 +22,7 @@
                 <ul>
                     @forelse($character->houses as $house)
                         <li class="house-logo" style="background: #e3e3e3;">
-                            <a href="/house/{{$house->id}}">
+                            <a href="{{ route('house', ['id' =>$house->id]) }}">
                                 <img src="{{asset('assets/images' . '/' . $house->image)}}" alt="{{$house->name}}">
                             </a>
                         </li>
