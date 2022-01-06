@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
  */
 Route::get(
     '/',
-    [Controller::class, 'homepage']
+    [Controller::class, 'homePage']
 )->name('homepage');
 
 /**
@@ -29,3 +29,11 @@ Route::get(
     '/character/{id}',
     [Controller::class, 'characterPage']
 )->name('character_page');
+
+/**
+ * The houses page route
+ */
+Route::get(
+    '/houses',
+    [Controller::class, 'houses']
+)->name('houses');

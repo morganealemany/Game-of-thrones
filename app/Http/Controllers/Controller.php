@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Character;
+use App\Models\House;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -17,7 +18,7 @@ class Controller extends BaseController
      *
      * @return void
      */
-    public function homepage()
+    public function homePage()
     {
         $characters = Character::all();
         return view('homepage', [
@@ -33,10 +34,26 @@ class Controller extends BaseController
      */
     public function characterPage($id)
     {
+        // Retrieve the given character
         $character = Character::findOrFail($id);
 
         return view('characterpage', [
             'character' => $character,
+        ]);
+    }
+
+    /**
+     * Display the page of all houses
+     *
+     * @return void
+     */
+    public function houses()
+    {
+        //Retrieve all houses
+        $houses = House::all();
+
+        return view('houses', [
+            'houses' => $houses,
         ]);
     }
 }
