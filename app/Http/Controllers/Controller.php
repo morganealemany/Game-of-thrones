@@ -24,4 +24,19 @@ class Controller extends BaseController
             'characters' => $characters,
         ]);
     }
+
+    /**
+     * Display the page of a given charatcer details
+     *
+     * @param [string] $id
+     * @return void
+     */
+    public function characterPage($id)
+    {
+        $character = Character::findOrFail($id);
+
+        return view('characterpage', [
+            'character' => $character,
+        ]);
+    }
 }

@@ -21,3 +21,11 @@ Route::get(
     '/',
     [Controller::class, 'homepage']
 )->name('homepage');
+
+/**
+ * The character details route
+ */
+Route::get(
+    '/character/{id}',
+    [Controller::class, 'characterPage']
+)->name('character_page');

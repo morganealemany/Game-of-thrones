@@ -25,7 +25,7 @@ class Character extends Model {
      * A character can belongs to many houses so we use the house_has_characters table to related them
      * @return void
      */
-    public function house()
+    public function houses()
     {
         return $this->belongsToMany('App\Models\House', 'house_has_characters', 'character', 'house');
     }
