@@ -56,4 +56,20 @@ class Controller extends BaseController
             'houses' => $houses,
         ]);
     }
+
+    /**
+     * Display the page for a given house
+     *
+     * @param [string] $id
+     * @return void
+     */
+    public function house($id)
+    {
+        // Retrieve the given house
+        $house = House::find($id);
+
+        return view('house', [
+            'house' => $house,
+        ]);
+    }
 }

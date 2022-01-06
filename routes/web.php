@@ -23,7 +23,7 @@ Route::get(
 )->name('homepage');
 
 /**
- * The character details route
+ * The route for a given character
  */
 Route::get(
     '/character/{id}',
@@ -37,3 +37,11 @@ Route::get(
     '/houses',
     [Controller::class, 'houses']
 )->name('houses');
+
+/**
+ * The route for a given house
+ */
+Route::get(
+    '/house/{id}',
+    [Controller::class, 'house']
+)->name('house');
